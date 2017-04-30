@@ -1,4 +1,4 @@
 venv
 static/img
 .idea
-__pycache__
+__pycache__/

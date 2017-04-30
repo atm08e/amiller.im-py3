@@ -4,9 +4,9 @@ import handlers
 import os
 import routes
 #
-from aiohttp import web as web
-from aiohttp_jinja2 import jinja2 as jinja2
-from aiohttp_jinja2 import aiohttp_jinja2 as aiohttp_jinja2
+from aiohttp import web
+import aiohttp_jinja2
+from aiohttp_jinja2 import jinja2
 
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
