@@ -16,12 +16,15 @@ logger = logging.getLogger(__name__)
 class AmillerIm:
     @staticmethod
     def get_app(**kwargs):
-        app = web.Application(loop=kwargs.get('loop'))
 
-        path_to_templates = '/home/amiller/workspace/amiller.im/templates'
+        app = web.Application(loop=kwargs.get('loop'))
+        app['path_to_app_root'] = os.path.dirname(os.path.abspath(__file__))
+        app['path_to_templates'] = '{}/{}'.format(app['path_to_app_root'], 'templates')
+        app['path_to_static'] = '{}/{}'.format(app['path_to_app_root'], 'static')
+
         aiohttp_jinja2.setup(app,
                              context_processors=[aiohttp_jinja2.request_processor],
-                             loader=jinja2.FileSystemLoader(path_to_templates))
+                             loader=jinja2.FileSystemLoader(app['path_to_templates']))
 
         routes.setup(app=app, handler=handlers)
         return app
