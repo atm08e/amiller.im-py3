@@ -13,5 +13,5 @@ def setup(app, handler, *args, **kwargs):
 
     # Static Routes
     app.router.add_static(prefix='/static/',
-                          path='/home/amiller/workspace/amiller.im/static',
+                          path=app['path_to_static'],
                           name='static')
