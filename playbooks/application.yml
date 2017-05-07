@@ -18,9 +18,10 @@
 
 # TODO setup logging from stdout/stderr to /var/log/blah
 
-  - name: Stop Screen
-    command: 'screen -X -S "amiller.im" quit'
+  - name: Reload Nginx configuration
+    command: 'sudo systemctl reload nginx.service'
 
-  - name: Start Screen
-    command: 'screen -dmS amiller.im /home/auto/amiller.im/venv/bin/python /home/auto/amiller.im/amiller_im.py'
+  - name: Restart Amiller.im.Service
+    command: 'sudo systemctl restart amiller.im.service'
+
 # TODO Gunicorn
