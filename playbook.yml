@@ -1,5 +1,18 @@
 - hosts: [application]
   tasks:
+  - name: Install Nginx
+    yum:
+      name: nginx
+      state: latest
+
+  
+  - name: Install Python-Devel
+    yum:
+      name: python-devel
+      state: latest
+
+# TODO nginx configuration and static resources, and static install?
+# TODO python3.6 static installation
   - name: Pull Master
     git:
       repo: 'git@gitlab.com:atm08e/amiller.im-py3.git'
@@ -13,8 +26,13 @@
       requirements: /home/auto/amiller.im/requirements.txt
       virtualenv_python: /usr/bin/python3.6
 
+# TODO real init scripts, supervisord or systemd
+
+# TODO setup logging from stdout/stderr to /var/log/blah
+
   - name: Stop Screen
     command: 'screen -X -S "amiller.im" quit'
 
   - name: Start Screen
     command: 'screen -dmS amiller.im /home/auto/amiller.im/venv/bin/python /home/auto/amiller.im/amiller_im.py'
+# TODO Gunicorn

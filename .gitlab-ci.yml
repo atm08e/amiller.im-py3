@@ -25,5 +25,5 @@ deploy_app:
   script:
     - 'venv/bin/ansible-playbook -i environment playbook.yml'
   environment:
-    name: amiller.im
+    name: production
     url: https://amiller.im
