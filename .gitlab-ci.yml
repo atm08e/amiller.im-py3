@@ -1,8 +1,7 @@
 stages:
-#  - test
   - deploy
 
-deploy:
+deploy_app:
   stage: deploy
   tags:
     - ansible
@@ -11,5 +10,3 @@ deploy:
   environment:
     name: amiller.im
     url: https://amiller.im
-   only:
-    - master
