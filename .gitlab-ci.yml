@@ -1,13 +1,22 @@
+image: "python:3.6"
+
+before_script:
+  - python --version
+  - pip install virtualenv
+
 stages:
-  - verify
+  - build
+  - test
   - deploy
 
-verify:
-  stage: verify
-  tags:
-    - ansible
+build:
+  - stage: build
+  - script: 'virtualenv -p `which python3` venv && venv/bin/pip install -r requirements.txt'
+
+test:
+  stage: test
   script:
-    - 'ls -alh /root && cat /root/.ssh/id_rsa'
+    - 'python -m unittest test_amiller_im'
 
 deploy_app:
   stage: deploy
