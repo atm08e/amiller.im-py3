@@ -7,8 +7,8 @@ freeze:
 env:
 	virtualenv -p /usr/bin/python3.5 venv
 
-s:
-	$("source venv/bin/activate")
-
 run:
 	honcho start
+
+deploy:
+    ansible-playbook -i environment playbook.yml
