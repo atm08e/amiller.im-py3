@@ -9,6 +9,7 @@ build:
   stage: build
   script: 'pip install virtualenv && virtualenv -p `which python3` venv && venv/bin/pip install -r requirements.txt'
   artifacts:
+    expire_in: 1hr
     paths:
       - venv
 
