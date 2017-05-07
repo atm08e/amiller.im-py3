@@ -1,8 +1,5 @@
 image: "python:3.6"
 
-before_script:
-  - python --version
-  - pip install virtualenv
 
 stages:
   - build
@@ -12,6 +9,9 @@ stages:
 build:
   stage: build
   script: 'virtualenv -p `which python3` venv && venv/bin/pip install -r requirements.txt'
+  artifacts:
+    paths:
+      - venv
 
 test:
   stage: test
