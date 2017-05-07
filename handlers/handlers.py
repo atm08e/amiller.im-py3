@@ -44,9 +44,11 @@ class Handlers():
     @aiohttp_jinja2.template('snowboarding.html')
     async def snowboarding(request):
         year = request.match_info.get('year', None)
+        trip = request.match_info.get('trip', None)
         # TODO check year and default
-        gallery = request.app['galleries']['snowboarding'][year]
-        logger.debug(gallery)
+        #logger.debug(request.app['galleries']['snowboarding'])
+        gallery = request.app['galleries']['snowboarding'][year][trip]
+
         return gallery
 
     @aiohttp_jinja2.template('under_construction.html')
