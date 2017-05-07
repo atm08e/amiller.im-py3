@@ -1,22 +1,5 @@
 - hosts: [application]
   tasks:
-  - name: Install Nginx
-    yum:
-      name: nginx
-      state: latest
-
-  - name: Install Python3.6
-    yum:
-      name: python36u
-      state: latest
-
-  - name: Install Python-Devel
-    yum:
-      name: python36u-devel
-      state: latest
-
-# TODO nginx configuration and static resources, and static install?
-# TODO python3.6 static installation
   - name: Pull Master
     git:
       repo: 'git@gitlab.com:atm08e/amiller.im-py3.git'

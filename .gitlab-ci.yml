@@ -1,6 +1,5 @@
 image: "python:3.6"
 
-
 stages:
   - build
   - test
@@ -23,7 +22,8 @@ deploy_app:
   tags:
     - ansible
   script:
-    - 'venv/bin/ansible-playbook -i environment playbook.yml'
+    - 'venv/bin/ansible-playbook -s -i environment playbooks/system.yml'
+    - 'venv/bin/ansible-playbook -i environment playbooks/application.yml'
   environment:
     name: production
     url: https://amiller.im
