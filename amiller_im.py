@@ -30,13 +30,29 @@ class AmillerIm:
         # Load galleries into memory
         app['galleries'] = {
             'snowboarding':
-                {'2016':
-                     {'1': gallery_json_loader(
-                         os.path.join(app['path_to_static'], *['files', 'snowboarding', '1', 'wreckbreck2016.json'])),
-                      '2': gallery_json_loader(
-                          os.path.join(app['path_to_static'], *['files', 'snowboarding', '2', 'familybreck2016.json']))
-                      }
-                 }
+                {
+                    '2016':
+                    {
+                        '1': gallery_json_loader(
+                                os.path.join(app['path_to_static'],
+                                             *['galleries', 'snowboarding', '2016', 'wreckbreck2016.json'])),
+                        '2': gallery_json_loader(
+                                os.path.join(app['path_to_static'],
+                                             *['galleries', 'snowboarding', '2016', 'familybreck2016.json']))
+                    },
+                    '2017':
+                    {
+                        '1': gallery_json_loader(
+                                os.path.join(app['path_to_static'],
+                                             *['galleries', 'snowboarding', '2017', 'wreckbreck2017.json'])),
+                        '2': gallery_json_loader(
+                                os.path.join(app['path_to_static'],
+                                             *['galleries', 'snowboarding', '2017', 'shredapalooza2017.json'])),
+                        '3': gallery_json_loader(
+                                os.path.join(app['path_to_static'],
+                                             *['galleries', 'snowboarding', '2017', 'brecksolo2017.json'])),
+                    }
+                }
         }
 
         aiohttp_jinja2.setup(app,
