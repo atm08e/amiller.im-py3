@@ -64,11 +64,18 @@
                             <li><a href="/snowboarding/2016/2">Family 2016</a></li>
                             <li><a href="/snowboarding/2017/1">Wreck Breck 2017</a></li>
                             <li><a href="/snowboarding/2017/2">Shred-a-palooza 2017</a></li>
-                            <li><a href="/snowboarding/2017/3">Breck Solo 2017</a></li>
+                            <li><a href="/snowboarding/2017/3">#IBelieveInSpringBreak2017</a></li>
                         </ul>
                     </li>
 
-                    <li {% if request.path == 'about' %} class="active" {% endif %}><a href="/under_construction">About</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/about/drew">Drew</a></li>
+                            <li><a href="/about/site">This Site</a></li>
+                        </ul>
+                    </li>
+
                     <li {% if request.path == 'links' %} class="active" {% endif %}><a href="/under_construction">Links</a></li>
                 </ul>
                 <ul class="nav navbar-nav pull-right">
