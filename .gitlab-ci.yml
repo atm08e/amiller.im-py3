@@ -1,6 +1,15 @@
-deploy_app:
+stages:
+#  - test
+  - deploy
+
+deploy:
   stage: deploy
   tags:
     - ansible
   script:
-    - 'ansible-playbook -i staging deploy.yml'
+    - 'ansible-playbook -i environment playbook.yml'
+  environment:
+    name: amiller.im
+    url: https://amiller.im
+   only:
+    - master

@@ -1,0 +1,20 @@
+- hosts: [application]
+  tasks:
+  - name: Pull Master
+    git:
+      repo: 'git@gitlab.com:atm08e/amiller.im-py3.git'
+      dest: /home/auto/amiller.im
+      key_file: /home/auto/.ssh/ida_rsa
+      accept_hostkey: yes
+
+  - name: Create/Update VirtualEnv
+    pip:
+      virtualenv: /home/auto/amiller.im/venv
+      requirements: /home/auto/amiller.im/requirements.txt
+      virtualenv_python: /usr/bin/python3.6
+
+  - name: Stop Screen
+    command: 'screen -X -S "amiller.im" quit'
+
+  - name: Start Screen
+    command: 'screen -dmS amiller.im /home/auto/amiller.im/venv/bin/python /home/auto/amiller.im/amiller_im.py'
