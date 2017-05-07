@@ -50,7 +50,7 @@ class AmillerIm:
                                              *['galleries', 'snowboarding', '2017', 'shredapalooza2017.json'])),
                         '3': gallery_json_loader(
                                 os.path.join(app['path_to_static'],
-                                             *['galleries', 'snowboarding', '2017', 'brecksolo2017.json'])),
+                                             *['galleries', 'snowboarding', '2017', 'ibelieveinspringbreak2017.json'])),
                     }
                 }
         }
