@@ -10,6 +10,7 @@ def setup(app, handler, *args, **kwargs):
     app.router.add_get('/register', handler.register)
     app.router.add_get('/login', handler.login)
     app.router.add_get('/under_construction', handler.under_construction)
+    app.router.add_get('/test', handler.test)
 
     # Static Routes
     app.router.add_static(prefix='/static/',
