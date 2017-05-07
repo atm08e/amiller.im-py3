@@ -6,8 +6,9 @@
     <h1>Snowboarding 2016</h1>
 </div>
 
+{% for row in images %}
 <div class="row">
-    {% for image in images %}
+    {% for image in row %}
     <div class="col-md-3">
         <div class="thumbnail">
             <a href="{{image.source}}">
@@ -17,5 +18,6 @@
     </div>
     {% endfor %}
 </div>
+{% endfor %}
 
 {% endblock %}
