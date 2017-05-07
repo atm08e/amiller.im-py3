@@ -12,6 +12,7 @@
       virtualenv: /home/auto/amiller.im/venv
       requirements: /home/auto/amiller.im/requirements.txt
       virtualenv_python: /usr/bin/python3.6
+# TODO pull build artifact instead???
 
 # TODO real init scripts, supervisord or systemd
 
