@@ -4,15 +4,15 @@ import sys
 
 from aiohttp.test_utils import  AioHTTPTestCase, unittest_run_loop
 
-from amiller_im import AmillerIm
+from app.main import create_app
 
 logging.basicConfig(stream=sys.stdout, level=logging.debug)
 logger = logging.getLogger(__name__)
 
 class AmillerImTestCases(AioHTTPTestCase):
 
-    def get_app(self):
-        return AmillerIm.get_app()
+    def get_app(loop):
+        return create_app(loop)
 
     def setUp(self):
         super(AmillerImTestCases, self).setUp()
