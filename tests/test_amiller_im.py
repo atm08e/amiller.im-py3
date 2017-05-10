@@ -22,4 +22,5 @@ class AmillerImTestCases(AioHTTPTestCase):
 
     @unittest_run_loop
     async def test_root(self):
+        # Sanity Smoke Test
         req = await self.client.request('GET', '/')

@@ -1,10 +1,20 @@
-def setup(app, handler, *args, **kwargs):
+import logging
 
+import sys
+
+from aiohttp import web
+
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+
+def setup_routes(app: web.Application, handler):
     # Application Routes
     app.router.add_get('/', handler.root)
     app.router.add_get('/snowboarding/{year}/{trip}', handler.snowboarding)
     app.router.add_get('/fishing/{trip}', handler.snowboarding)
     app.router.add_get('/about', handler.about)
+    app.router.add_get('/blog', handler.blog)
     app.router.add_get('/blog/{name}', handler.blog)
     app.router.add_get('/links', handler.links)
     app.router.add_get('/register', handler.register)

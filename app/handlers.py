@@ -1,16 +1,13 @@
 import logging
 import sys
-import pprint
 
-
-from aiohttp import web
 import aiohttp_jinja2
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
-class Handlers():
+class Handlers:
 
     @aiohttp_jinja2.template('index.html')
     async def root(request):
