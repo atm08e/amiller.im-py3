@@ -5,22 +5,36 @@
 <div class="page-header">
     <h1>Welcome to Amiller.im</h1>
     <h3>Personal website of Drew, w00t</h3>
-    <p>Hi, this websites purpose is for sharing my technological opinions, trip vacation pictures, and keeping my full stack engineering
+    <p>Hi, this websites purpose is for sharing my technological opinions/projects, trip vacation pictures, and keeping my full stack engineering
         skills up to date. I particularly like building applications in Python3, PHP7, and C++14 and particularly hate doing anything
-        Javascript.</p>
+        Javascript. <b>The views and the opinions expressed on this website are solely my own, and do not reflect my employer, friends, or family.</b></p>
+    <br>
+    <p><b>5/09/16</b> - Refactored the entire code base to be more pythonic, maintainable, and easier to develop for. I feel great about the core code base of the site now and am looking forward to building on top of it for years :).
+        Under the hood many things were improved. The application server is being run with gunicorn instead of just a straight python command. The application also creates a session but it's not being used for anything yet.
+        For development an auto reloading server provided by aiohttp-devtools is being used so that code changes are immediately displayed in the browser. The site also has a new favicon and some content on the about pages has been updated.
+        There is also some other "special" temporary hidden content spread throughout the site.
+    </p>
+    <p>
+        Next I am thinking of getting some fishing pictures uploaded and then all of the galleries will by uploaded from the original thought of building this website.
+        After that I want to write my first blog post so I have motivation to build out the blog section of the website. I'm feeling a nodejs hating blog is in order :).
+        There are also some css/html tweaks to make that are small but will make this website look more professional and less amateurish. Stay tuned!
+    </p>
+
 
     <p><b>5/07/16</b> - Snowboarding galleries for 2016 & 2017 online! The galleries could use some dynamic formatting but I'm not going to prioritize that right now.
+    </p>
 
-    <p><b>5/06/16</b> - Iteration 1 of CI/CD completed via gitlab. See the code for it here: https://gitlab.com/atm08e/amiller.im-py3. Will not be using https://github.com/atm08e/amiller.im anymore.
-        Maybe i'll write a hook to push to it at some point. Next objective is to get some snowboarding galleries online!
+    <p><b>5/06/16</b> - Iteration 1 of CI/CD completed via gitlab. See the code for it here: <a href="https://gitlab.com/atm08e/amiller.im-py3">amiller.im-py3</a>. Code will be mirrored to <a href="https://github.com/atm08e/amiller.im anymore">Github</a> on a daily basis, but wont serve as the primary repo. Next objective is to get some snowboarding galleries online!
+    </p>
 
     <p><b>4/29/16</b> - Redid the website in a full server side rendered python 3 stack. Dedicated post to come soon with my motivations for this,
         hopefully soon..
         Hoping that this website will be funner to work on now that I convinced myself to just stay away from javascript world.</p>
+    </p>
 
     <p><b>3/02/16</b> - Website Online! This website is a work in progress, links will be broken, wild cats will apear,
         and will be updated rapidly in the coming days/weeks </p>
-
+    </p>
 </div>
 
 {% endblock %}
