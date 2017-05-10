@@ -8,7 +8,7 @@ User=auto
 Group=auto
 WorkingDirectory=/home/auto/amiller.im
 Environment="PATH=/home/auto/amiller.im/venv/bin"
-ExecStart=/home/auto/amiller.im/venv/bin/python /home/auto/amiller.im/amiller_im.py
+ExecStart=/home/auto/amiller.im/venv/bin/gunicorn app.gunicorn:app --worker-class aiohttp.worker.GunicornWebWorker
 Restart=always
 RestartSec=3
 
