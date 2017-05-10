@@ -29,7 +29,6 @@
       owner: root
       group: root
       mode: '0600'
-      daemon_reload: yes
 
   - name: Amiller nginx reverse proxy
     template:
