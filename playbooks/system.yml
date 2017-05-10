@@ -29,6 +29,7 @@
       owner: root
       group: root
       mode: '0600'
+      daemon_reload: yes
 
   - name: Amiller nginx reverse proxy
     template:
@@ -50,5 +51,6 @@
       state: directory
       mode: 0750
 
-  - name: Reload SystemD
-    systemd: daemon_reload=yes
+# Need Ansible 2.4.0.0 not in PyPi yet
+#  - name: Reload SystemD
+#    systemd: daemon_reload=yes
