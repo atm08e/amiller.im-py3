@@ -8,7 +8,7 @@ User=auto
 Group=auto
 WorkingDirectory=/home/auto/amiller.im
 Environment="PATH=/home/auto/amiller.im/venv/bin"
-ExecStart=/home/auto/amiller.im/venv/bin/gunicorn app.gunicorn:app --worker-class aiohttp.worker.GunicornWebWorker
+ExecStart=/home/auto/amiller.im/venv/bin/gunicorn app.gunicorn:app --worker-class aiohttp.worker.GunicornWebWorker --bind 127.0.0.1:5000
 Restart=always
 RestartSec=3
 
