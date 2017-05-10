@@ -16,7 +16,7 @@ build:
 test:
   stage: test
   script:
-    - 'venv/bin/python -m unittest test_amiller_im'
+    - 'make test'
 
 deploy_app:
   stage: deploy
