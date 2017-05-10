@@ -49,3 +49,6 @@
       path: /home/auto
       state: directory
       mode: 0750
+
+  - name: Reload SystemD
+    systemd: daemon_reload=yes
