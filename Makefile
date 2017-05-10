@@ -11,7 +11,7 @@ run:
 	honcho start
 
 test:
-	python -m unittest test_amiller_im.py
+	python -m unittest tests.test_amiller_im
 
 deploy:
 	ansible-playbook -i environment playbook.yml
