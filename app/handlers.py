@@ -18,8 +18,12 @@ class Handlers:
         response.headers['amiller.im-custom'] = 'en'
         return response
 
-    @aiohttp_jinja2.template('about.html')
-    async def about(request):
+    @aiohttp_jinja2.template('about_drew.html')
+    async def about_drew(request):
+        return {'about': 'derp'}
+
+    @aiohttp_jinja2.template('about_site.html')
+    async def about_site(request):
         return {'about': 'derp'}
 
     @aiohttp_jinja2.template('links.html')
