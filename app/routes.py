@@ -12,7 +12,7 @@ def setup_routes(app: web.Application, handler):
     # Application Routes
     app.router.add_get('/', handler.root)
     app.router.add_get('/snowboarding/{year}/{trip}', handler.snowboarding)
-    app.router.add_get('/fishing/{trip}', handler.snowboarding)
+    app.router.add_get('/boating/{year}/{trip}', handler.boating)
     app.router.add_get('/about/drew', handler.about_drew)
     app.router.add_get('/about/site', handler.about_site)
     app.router.add_get('/blog', handler.blog)

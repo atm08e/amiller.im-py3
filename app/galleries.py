@@ -43,5 +43,25 @@ def setup_galleries(path_to_static):
                                 os.path.join(path_to_static,
                                              *['galleries', 'snowboarding', '2017', 'ibelieveinspringbreak2017.json'])),
                     }
+            },
+        'boating':
+            {
+                '2016':
+                    {
+                        '1': gallery_json_loader(
+                                os.path.join(path_to_static,
+                                             *['galleries', 'boating', '2016', 'fishing-jan-2016.json'])),
+
+                        '2': gallery_json_loader(
+                                os.path.join(path_to_static,
+                                             *['galleries', 'boating', '2016', 'airshow-2016.json'])),
+
+                        '3': gallery_json_loader(
+                                os.path.join(path_to_static,
+                                             *['galleries', 'boating', '2016', 'fishing-dad-grandpa-july-2016.json'])),
+                        '4': gallery_json_loader(
+                                os.path.join(path_to_static,
+                                             *['galleries', 'boating', '2016', 'miniseason-2016.json']))
+                    }
             }
     }

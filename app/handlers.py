@@ -42,15 +42,20 @@ class Handlers:
     async def register(request):
         return {'about': 'derp'}
 
-    @aiohttp_jinja2.template('snowboarding.html')
+    @aiohttp_jinja2.template('gallery.html')
     async def snowboarding(request):
         year = request.match_info.get('year', None)
         trip = request.match_info.get('trip', None)
         # TODO check year and default
         #logger.debug(request.app['galleries']['snowboarding'])
-        gallery = request.app['galleries']['snowboarding'][year][trip]
+        return request.app['galleries']['snowboarding'][year][trip]
 
-        return gallery
+    @aiohttp_jinja2.template('gallery.html')
+    async def boating(request):
+        year = request.match_info.get('year', None)
+        trip = request.match_info.get('trip', None)
+        # TODO check year and default
+        return request.app['galleries']['boating'][year][trip]
 
     @aiohttp_jinja2.template('under_construction.html')
     async def under_construction(request):
