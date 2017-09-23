@@ -69,6 +69,9 @@ def setup_galleries(path_to_static):
                         '1': gallery_json_loader(
                                 os.path.join(path_to_static,
                                              *['galleries', 'boating', '2017', 'fishing-june-2017.json'])),
+                        '2': gallery_json_loader(
+                                os.path.join(path_to_static,
+                                             *['galleries', 'boating', '2017', 'keys-july-2017.json'])),
                     }
             }
     }
