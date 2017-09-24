@@ -1,4 +1,4 @@
-image: "python:3.6"
+image: "ruby:2.1"
 
 stages:
   - debug
@@ -28,7 +28,7 @@ before_script:
   # instead.
   # - mkdir -p ~/.ssh
   # - '[[ -f /.dockerenv ]] && echo "$SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts'
-  
+
 
 build:
   stage: build
