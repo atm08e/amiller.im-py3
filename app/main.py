@@ -10,6 +10,7 @@ from aiohttp import web
 from aiohttp_jinja2 import jinja2
 from aiohttp_session.cookie_storage import EncryptedCookieStorage
 #
+from app.blogs import setup_blogs
 from app.galleries import setup_galleries
 from app.handlers import Handlers
 from app.routes import setup_routes
@@ -51,6 +52,7 @@ def create_app(loop):
         path_to_templates=TEMPLATE_DIR,
         path_to_static=STATIC_DIR,
         #
+        blogs=setup_blogs(STATIC_DIR),
         galleries=setup_galleries(STATIC_DIR),
         #
         deployment_time='{:%b, %d %Y %H:%M:%S}'.format(datetime.date.today())

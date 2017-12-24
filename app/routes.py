@@ -16,7 +16,7 @@ def setup_routes(app: web.Application, handler):
     app.router.add_get('/about/drew', handler.about_drew)
     app.router.add_get('/about/site', handler.about_site)
     app.router.add_get('/blog', handler.blog)
-    app.router.add_get('/blog/{name}', handler.blog)
+    app.router.add_get('/blog/movies/{name}', handler.movies)
     app.router.add_get('/links', handler.links)
     app.router.add_get('/register', handler.register)
     app.router.add_get('/login', handler.login)

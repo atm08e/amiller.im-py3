@@ -4,8 +4,10 @@ all:
 freeze:
 	pip freeze > requirements.txt
 
-env:
-	virtualenv -p /usr/bin/python3.5 venv
+venv:
+	virtualenv -p `which python3` venv; \
+	source ./venv/bin/activate; \
+	pip install -r requirements.txt;
 
 run:
 	honcho start
@@ -15,3 +17,6 @@ test:
 
 deploy:
 	ansible-playbook -i environment playbook.yml
+
+clean:
+	rm -rf venv

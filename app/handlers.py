@@ -42,6 +42,11 @@ class Handlers:
     async def register(request):
         return {'about': 'derp'}
 
+    @aiohttp_jinja2.template('blog.html')
+    async def movies(request):
+        name = request.match_info.get('name', None)
+        return request.app['blogs']['movies'][name]
+
     @aiohttp_jinja2.template('gallery.html')
     async def snowboarding(request):
         year = request.match_info.get('year', None)
