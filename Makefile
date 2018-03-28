@@ -18,5 +18,18 @@ test:
 deploy:
 	ansible-playbook -i environment playbook.yml
 
+docker-build:
+	docker build -t amiller_im_test .
+
+docker-run:
+	docker run -d \
+    -p 5000:5000 \
+    --name=amiller_im_test \
+    amiller_im_test:latest
+
+docker-bash:
+	docker exec \
+	-i -t amiller_im_test /bin/bash
+
 clean:
 	rm -rf venv
