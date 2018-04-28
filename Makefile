@@ -15,21 +15,40 @@ run:
 test:
 	venv/bin/python -m unittest tests.test_amiller_im
 
+boot-deploy:
+	kubectl run amiller-im-py3 --image=gcr.io/${PROJECT_ID}/amiller-im-py3:v2 --port 8080
+
 deploy:
-	ansible-playbook -i environment playbook.yml
+	kubectl set image deployment/amiller-im-py3 amiller-im-py3=gcr.io/${PROJECT_ID}/amiller-im-py3:v2
+
+docker: docker-build
 
 docker-build:
-	docker build -t amiller_im_test .
+	docker build -t gcr.io/${PROJECT_ID}/amiller-im-py3:v2 .
 
 docker-run:
-	docker run -d \
-    -p 5000:5000 \
-    --name=amiller_im_test \
-    amiller_im_test:latest
+	docker run \
+	--detach \
+	--rm \
+    --publish 8080:8080 \
+    --name=amiller-im-py3 \
+    gcr.io/${PROJECT_ID}/amiller-im-py3:v2
 
 docker-bash:
 	docker exec \
-	-i -t amiller_im_test /bin/bash
+	-i -t amiller-im-py3 /bin/bash
 
-clean:
+docker-push:
+	gcloud docker -- push gcr.io/${PROJECT_ID}/amiller-im-py3:v2
+
+docker-stop:
+	docker stop amiller-im-py3
+
+lb:
+	kubectl expose deployment amiller-im-py3 --type=LoadBalancer --port 80 --target-port 8080
+
+get-ext-ip:
+	kubectl get service
+
+clean-venv:
 	rm -rf venv

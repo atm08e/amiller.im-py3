@@ -52,7 +52,7 @@ def create_app(loop):
         path_to_templates=TEMPLATE_DIR,
         path_to_static=STATIC_DIR,
         #
-        blogs=setup_blogs(STATIC_DIR),
+        # blogs=setup_blogs(STATIC_DIR),
         galleries=setup_galleries(STATIC_DIR),
         #
         deployment_time='{:%b, %d %Y %H:%M:%S}'.format(datetime.date.today())

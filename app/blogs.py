@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 def blog_loader(path):
     logger.debug('Trying to open file and parse markdown: {}'.format(path))
-    return markdown(Path(path).read_text())
+    return markdown(Path(path).read_text(encoding='UTF-8'))
 
 
 def setup_blogs(path_to_static):

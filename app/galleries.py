@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 def gallery_json_loader(path):
     logger.debug('Trying to open file: {}'.format(path))
-    with open(path, 'r+') as f:
+    with open(path, 'r+', encoding='utf-8') as f:
         # TODO async
         loaded_json = json.load(f)
         #logger.debug('Loaded Json: {}'.format(loaded_json))
