@@ -9,7 +9,7 @@ image_resource:
 
 inputs:
   - name: amiller_im_git
-  - name: secrets
+  #- name: secrets
 
 outputs:
 

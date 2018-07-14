@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 uname -a
 which ansible
