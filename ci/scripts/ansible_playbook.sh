@@ -9,7 +9,7 @@ ansible --version
 
 # Setup Private Key
 mkdir -p /root/.ssh
-echo "AMILLER_IM_PRIVATE_KEY" > /root/.ssh/id_rsa
+echo "$AMILLER_IM_PRIVATE_KEY" > /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa
 
 # Setup ssh config
