@@ -4,13 +4,10 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: governmentpaas/spruce
-    #repository_mirror: TODO
+    repository: williamyeh/ansible:alpine3
+
 inputs:
   - name: amiller_im_git
-
-outputs:
-  - name: secrets
 
 params:
 
