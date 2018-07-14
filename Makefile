@@ -47,10 +47,10 @@ docker-stop:
 ci-amiller-im: spruce-amiller-im fly-amiller-im
 
 spruce-amiller-im:
-	spruce merge ci/pipeline_deploy.yml > ci/compiled_pipeline_deploy.yml
+	spruce merge ci/pipeline_deploy.yml > ci/compiled/compiled_pipeline_deploy.yml
 
 fly-amiller-im:
-	fly -t vbox set-pipeline -p amiller.im -c ci/compiled_pipeline_deploy.yml
+	fly -t vbox set-pipeline -p amiller.im -c ci/compiled/compiled_pipeline_deploy.yml
 
 lb:
 	kubectl expose deployment amiller-im-py3 --type=LoadBalancer --port 80 --target-port 8080

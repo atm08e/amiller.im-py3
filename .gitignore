@@ -2,3 +2,4 @@ venv
 static/img
 .idea
 __pycache__/
+ci/compiled/*.yml

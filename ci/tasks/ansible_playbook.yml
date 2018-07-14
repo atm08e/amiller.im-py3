@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: williamyeh/ansible:alpine3
+    #repository_mirror: TODO
+
+inputs:
+  - name: amiller_im_git
+  - name: secrets
+
+outputs:
+
+params:
+
+run:
+  path: amiller_im_git/ci/scripts/ansible_playbook.sh
