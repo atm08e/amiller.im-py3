@@ -8,6 +8,7 @@ ansible --version
 # TODO copy secrets
 
 # Setup Private Key
+mkdir -p /root/.ssh
 echo "AMILLER_IM_PRIVATE_KEY" > /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa
 
