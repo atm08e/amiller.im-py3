@@ -8,6 +8,17 @@ resources:
     private_key: (( vault "secret/gitlab:private" ))
 
 jobs:
+
+- name: lint
+  serial: true
+  plan:
+  - get: amiller_im_git
+    trigger: true
+
+  - task: lint
+    file: amiller_im_git/ci/tasks/lint.yml
+    params:
+
 - name: amiller.im
   serial: true
   plan:
