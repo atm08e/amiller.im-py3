@@ -3,6 +3,8 @@ amiller.im website source code
 
 ### Dependencies
 python3.5 or python 3.6
+python3-devel
+redhat-rpm-config (Fedora)
 
 ### Installation
 ```bash
