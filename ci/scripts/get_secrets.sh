@@ -2,7 +2,7 @@
 set -e
 echo "Attempting to get secrets from vault..."
 
-# TODO
+# TODO having connection refused issues from within bosh lite
 # spruce merge \
 # --prune meta \
 # amiller_im_git/ci/config/secrets.yml > secrets/secrets.yml
