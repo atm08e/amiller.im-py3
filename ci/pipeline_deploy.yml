@@ -1,0 +1,20 @@
+---
+resources:
+- name: amiller_im_git
+  type: git
+  source:
+    branch: master
+    uri: git@gitlab.com:atm08e/amiller.im-py3.git
+    private_key: (( vault "secret/gitlab:private" ))
+
+jobs:
+- name: amiller.im
+  serial: true
+  plan:
+  - get: amiller_im_git
+    trigger: true
+
+  - task: get_secrets
+    file: amiller_im_git/ci/tasks/get_secrets.yml
+    params:
+      VAULT_TOKEN: (( vault "secret/vault:root_token" ))
