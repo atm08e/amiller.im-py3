@@ -1,4 +1,4 @@
-from ubuntu:18.04
+from ubuntu:latest
 
 # Needed
 RUN apt-get -y update \
