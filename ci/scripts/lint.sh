@@ -7,5 +7,6 @@ pylint --version
 echo ""
 ls -alh
 echo ""
-pylint amiller_im_git
+# TODO Do This beetter with env
+pylint app
 
