@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+cd amiller_im_git
+
 pylint --version
 echo ""
 ls -alh
