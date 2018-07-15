@@ -35,3 +35,4 @@ jobs:
     file: amiller_im_git/ci/tasks/ansible_playbook.yml
     params:
       AMILLER_IM_PRIVATE_KEY: (( vault "secret/amiller_im:private" ))
+      PLAYBOOK: application.yml
