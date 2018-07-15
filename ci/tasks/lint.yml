@@ -4,7 +4,8 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: eeacms/pylint
+    repository: clburlison/pylint
+    tags: py3-alpine
     #repository_mirror: TODO
 inputs:
   - name: amiller_im_git

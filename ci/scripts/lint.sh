@@ -3,10 +3,10 @@ set -e
 
 cd amiller_im_git
 
-pylint --version
+pylint3 --version
 echo ""
 ls -alh
 echo ""
 # TODO Do This beetter with env
-pylint app
+pylint3 app
 
