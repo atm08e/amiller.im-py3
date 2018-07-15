@@ -8,18 +8,26 @@
 <h3>{{header3}}</h3>
 <p>{{location}} | {{date}} | {{participants}}</p>
 
-{% for row in images %}
-<div class="row">
-    {% for image in row %}
-    <div class="col-md-3">
-        <div class="thumbnail">
-            <a href="{{image.source}}">
-                <img src="{{image.thumb}}" alt="Lights" style="width:100%">
-            </a>
-        </div>
-    </div>
+
+
+
+<div id="gallery1">
+
+    {% for row in images %}
+            {% for image in row %}
+                <img src="{{image.thumb}}" data-image="{{image.source}}" data-description="sendit" alt="sendit">
+            {% endfor %}
     {% endfor %}
 </div>
-{% endfor %}
+<script type="text/javascript">
 
+		jQuery("#gallery1").unitegallery({
+		        gallery_theme: "tiles",
+		    	tiles_type:"nested",
+				theme_enable_preloader: true,		//enable preloader circle
+				tiles_space_between_cols: 3,			//space between images
+
+		});
+
+</script>
 {% endblock %}
