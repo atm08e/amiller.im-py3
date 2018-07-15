@@ -12,6 +12,9 @@ venv:
 run:
 	honcho start
 
+lint:
+	venv/bin/python -m pylint app --errors-only
+
 test:
 	venv/bin/python -m unittest tests.test_amiller_im
 

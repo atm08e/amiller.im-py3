@@ -8,5 +8,5 @@ echo ""
 ls -alh
 echo ""
 # TODO Do This beetter with env
-pylint app
+pylint app --errors-only
 

@@ -8,5 +8,5 @@ import asyncio
 
 from .main import create_app
 
-loop = asyncio.get_event_loop()
-app = create_app(loop)
+LOOP = asyncio.get_event_loop()
+APP = create_app(LOOP)
