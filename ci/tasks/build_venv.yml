@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: williamyeh/ansible
+    tag: alpine3
+
+inputs:
+  - name: amiller_im_git
+
+ouputs:
+  - name: amiller_venv
+
+params:
+
+run:
+  path: amiller_im_git/ci/scripts/build_dependencies.sh

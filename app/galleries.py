@@ -42,7 +42,26 @@ def setup_galleries(path_to_static):
                         '3': gallery_json_loader(
                                 os.path.join(path_to_static,
                                              *['galleries', 'snowboarding', '2017', 'ibelieveinspringbreak2017.json'])),
-                    }
+                    },
+                '2018':
+                    {
+                        '1': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2018', 'alpinemeadows2018.json'])),
+                        '2': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2018', 'senditinvitational2018.json'])),
+                        '3': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2018', 'sierraattahoe2018.json'])),
+                        '4': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2018', 'whistlerblackcomb2018.json'])),
+                        '5': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2018', 'wreckbreck2018.json']))
+                    },
+
             },
         'boating':
             {

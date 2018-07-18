@@ -17,5 +17,8 @@ echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > /root/.ssh/config
 
 
 cd amiller_im_git
-ansible-playbook -s -i environment playbooks/system.yml
-ansible-playbook -i environment playbooks/application.yml
+
+ansible-playbook -i environment playbooks/$PLAYBOOK
+
+
+#ansible-playbook -s -i environment playbooks/system.yml
