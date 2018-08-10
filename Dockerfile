@@ -1,30 +1,24 @@
-from ubuntu:latest
+FROM python:3.7.0-alpine3.8
 
-# Needed
-RUN apt-get -y update \
-    && apt-get -y install \
-    python3.6 \
-    python3.6-dev \
-    python3-pip \
-    && apt-get autoremove \
+RUN apk add --no-cache \
+    gcc \
+    musl-dev \
+    libffi-dev \
+    openssl-dev \
+    && pip install pipenv \
     && mkdir -p /opt/amiller-im-py3
-
-# Nice to have for DevOps
-RUN apt-get -y install \
-    vim \
-    htop \
-    netcat \
-    && apt-get autoremove
+# gcc needed for python3 Cryptography moduke
+# musl-dev needed for #include <limit.h>
+# libffi-dev needed for #include <ffi.h>
+# openssl-dev need for #include <openssl/opensslv.h>
 
 COPY . /opt/amiller-im-py3
 
 WORKDIR /opt/amiller-im-py3
 
-RUN pip3 install \
-    --no-cache-dir \
-    -r requirements.txt
+RUN pipenv install
 
 EXPOSE 8080
 #EXPOSE 8081
 #CMD python3 -m http.server 8080
-CMD source .env; gunicorn app.gunicorn:app --worker-class aiohttp.worker.GunicornWebWorker --bind 0.0.0.0:8080
+CMD source .env; pipenv run gunicorn app.main:create_app --worker-class aiohttp.worker.GunicornWebWorker --bind 0.0.0.0:8080

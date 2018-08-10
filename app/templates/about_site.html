@@ -5,18 +5,13 @@
 <div class="page-header">
     <h1>About this website</h1>
 </div>
-    <h3>Motivation</h3>
-    <p>There are three primary motivations for the creation of this website.
-        Firstly, I wanted a way to keep my full stack engineering skills sharp. This includes the entire stack from the kernel all the way to javascript. It also includes the software engineering process of coming up with requirements, a spec, prioritizing features, to completion and delivery.</p>
-    <p>Second, I wanted somewhere besides facebook and instagram where I could show off all my trip pictures and express more technological oriented opinions.</p>
-    <p>Third and most important, I was looking for a fun way to exercise my talent and love for computers! Rule one for me when building this website is that I want to have as much fun with it as possible. Im not going to force any engineering decisions that make working on this website difficult so it becomes "work", eg. no javascript or single page application anymore.</p>
-
 <h3>Technologies</h3>
     <ul>
-        <li>Python3.5 - Namely the aiohttp framework which leverages the event loop and async/await sytnax.</li>
-        <li>Anisble - For configuration mangement and to deploy amiller-py3 code to "Production".</li>
-        <li>Gitlab - Mostly for their CI/CD integration that is simple enough for my needs and of course source control.</li>
-        <li>Docker - Used mainly in gitlab CI/CD integration for running unit test and to deploy</li>
+        <li>Rolling python3.7 saying on the latest and greatest python.</li>
+        <li>Aiohttp framework for the api server. </li>
+        <li>Gitlab for source control. Use to use the CICD but switched back to concourse instead</li>
+        <li>Docker for packaging the application with it's dependencies and providing easy and sane production environment</li>
+        <li>Concourse and Vault for secure CICD</li>
     </ul>
     <p>Code is available at: <a href="https://gitlab.com/atm08e/amiller.im-py3">amiller.im-py3</a>.</p>
 {% endblock %}

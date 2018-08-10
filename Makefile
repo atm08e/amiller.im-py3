@@ -16,7 +16,7 @@ lint:
 	venv/bin/python -m pylint app --errors-only
 
 test:
-	venv/bin/python -m unittest tests.test_amiller_im
+	python -m unittest tests.test_amiller_im
 
 boot-deploy:
 	kubectl run amiller-im-py3 --image=gcr.io/${PROJECT_ID}/amiller-im-py3:v2 --port 8080

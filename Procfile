@@ -1,2 +1,2 @@
 dev: adev runserver app
-prod: gunicorn app.gunicorn:APP --worker-class aiohttp.worker.GunicornWebWorker --bind 127.0.0.1:5000
+prod: gunicorn app.main:create_app --worker-class aiohttp.worker.GunicornWebWorker --bind 0.0.0.0:5000

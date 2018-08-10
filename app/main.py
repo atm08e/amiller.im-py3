@@ -36,7 +36,7 @@ async def on_cleanup(app: web.Application):
     pass
 
 
-def create_app(loop):
+async def create_app():
     # Create base web application
     app = web.Application()
 
