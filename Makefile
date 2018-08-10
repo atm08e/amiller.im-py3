@@ -27,7 +27,7 @@ deploy:
 docker: docker-build
 
 docker-build:
-	docker build -t gcr.io/${PROJECT_ID}/amiller-im-py3:v2 .
+	docker build -t amiller-im-py3:{VERSION} .
 
 docker-run:
 	docker run \
