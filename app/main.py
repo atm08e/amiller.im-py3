@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+#
+import asyncio
+import uvloop
+asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+#
 import datetime
 import logging
 import sys

@@ -1,0 +1,8 @@
+- hosts: [docker]
+  tasks:
+  - name: Pull Master
+    git:
+      repo: 'git@gitlab.com:atm08e/amiller.im-py3.git'
+      dest: /home/auto/amiller.im
+      key_file: /home/auto/.ssh/ida_rsa
+      accept_hostkey: yes

@@ -5,3 +5,10 @@ amiller.im
 ansible_ssh_private_key_file=~/.ssh/id_rsa
 ansible_user=auto
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[docker]
+178.128.10.198
+[docker:vars]
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+ansible_user=root
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'

@@ -12,8 +12,8 @@ logger = logging.getLogger(__name__)
 
 class AmillerImTestCases(AioHTTPTestCase):
 
-    def get_app(loop):
-        return create_app(loop)
+    async def get_application(self):
+        return await create_app()
 
     def setUp(self):
         super(AmillerImTestCases, self).setUp()

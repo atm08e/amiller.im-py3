@@ -1,33 +1,31 @@
-all:
-	python3 amiller_im.py
+all: venv
 
-freeze:
-	pip freeze > requirements.txt
+## Python Environment
+freeze: lock
+
+lock:
+	pipenv lock
 
 venv:
-	virtualenv -p `which python3` venv; \
-	source ./venv/bin/activate; \
-	pip install -r requirements.txt;
+	pipenv install --dev
 
 run:
-	honcho start
+	pipenv run honcho start
 
 lint:
-	venv/bin/python -m pylint app --errors-only
+	pipenv run python -m pylint app --errors-only
 
 test:
-	python -m unittest tests.test_amiller_im
+	pipenv run python -m unittest tests.test_amiller_im
 
-boot-deploy:
-	kubectl run amiller-im-py3 --image=gcr.io/${PROJECT_ID}/amiller-im-py3:v2 --port 8080
+clean:
+	pipenv clean
 
-deploy:
-	kubectl set image deployment/amiller-im-py3 amiller-im-py3=gcr.io/${PROJECT_ID}/amiller-im-py3:v2
-
+## Docker
 docker: docker-build
 
 docker-build:
-	docker build -t amiller-im-py3:{VERSION} .
+	docker build -t amiller-im-py3 .
 
 docker-run:
 	docker run \
@@ -39,14 +37,9 @@ docker-run:
 
 docker-bash:
 	docker exec \
-	-i -t amiller-im-py3 /bin/bash
+	-i -t amiller-im-py3 /bin/sh
 
-docker-push:
-	gcloud docker -- push gcr.io/${PROJECT_ID}/amiller-im-py3:v2
-
-docker-stop:
-	docker stop amiller-im-py3
-
+# CICD
 ci-amiller-im: spruce-amiller-im fly-amiller-im
 
 spruce-amiller-im:
@@ -55,11 +48,23 @@ spruce-amiller-im:
 fly-amiller-im:
 	fly -t vbox set-pipeline -p amiller.im -c ci/compiled/compiled_pipeline_amiller_im.yml
 
-lb:
-	kubectl expose deployment amiller-im-py3 --type=LoadBalancer --port 80 --target-port 8080
 
-get-ext-ip:
-	kubectl get service
+# NOT USED
+#lb:
+#	kubectl expose deployment amiller-im-py3 --type=LoadBalancer --port 80 --target-port 8080
+#
+#get-ext-ip:
+#	kubectl get service
+#
+#boot-deploy:
+#	kubectl run amiller-im-py3 --image=gcr.io/${PROJECT_ID}/amiller-im-py3:v2 --port 8080
+#
+#deploy:
+#	kubectl set image deployment/amiller-im-py3 amiller-im-py3=gcr.io/${PROJECT_ID}/amiller-im-py3:v2
+#
+#docker-push:
+#	gcloud docker -- push gcr.io/${PROJECT_ID}/amiller-im-py3:v2
+#
+#docker-stop:
+#	docker stop amiller-im-py3
 
-clean-venv:
-	rm -rf venv
