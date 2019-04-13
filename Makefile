@@ -33,7 +33,7 @@ docker-run:
 	--rm \
     --publish 8080:8080 \
     --name=amiller-im-py3 \
-    gcr.io/${PROJECT_ID}/amiller-im-py3:v2
+    amiller-im-py3
 
 docker-bash:
 	docker exec \
