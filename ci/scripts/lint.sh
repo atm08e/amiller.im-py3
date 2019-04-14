@@ -10,7 +10,7 @@ echo ""
 # TODO Do This beetter with env
 
 # we really should build 1 docker image
-pip install -r requirements
+pip install -r requirements.txt
 
 pylint app --errors-only
 
