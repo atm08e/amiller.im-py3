@@ -1,16 +1,11 @@
 #!/bin/sh
 set -e
-
-cd amiller_im_git
-
-pylint --version
 echo ""
 ls -alh
 echo ""
-# TODO Do This beetter with env
 
-# we really should build 1 docker image
-pip install -r requirements.txt
-
+cd /opt/amiller-im-py3
+echo "Trying to link!"
+pylint --version
 pylint app --errors-only
 
