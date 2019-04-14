@@ -1,8 +1,8 @@
 #!/bin/sh
-set -e
-echo ""
+pwd
+echo $PATH
 ls -alh
-echo ""
+ls -alh /opt/amiller-im-py3
 
 cd /opt/amiller-im-py3
 echo "Trying to link!"

@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+pwd
 datetime
 cd /opt/amiller-im-py3
 echo "Trying to run unit tests!"
