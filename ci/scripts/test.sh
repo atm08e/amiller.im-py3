@@ -1,11 +1,10 @@
-#!/bin/sh
-set -e
+#!/bin/bash
 pwd
-datetime
+date
 cd /opt/amiller-im-py3
 echo "Trying to run unit tests!"
-python --version
-pip freeze
-python -m unittest tests.test_amiller_im
+python3 --version
+pip3 freeze
+pytho3 -m unittest tests.test_amiller_im
 
 
