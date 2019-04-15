@@ -21,6 +21,8 @@ COPY . /opt/amiller-im-py3
 WORKDIR /opt/amiller-im-py3
 
 RUN pip3 install \
+    --trusted-host 192.168.7.200 \
+    --index-url http://192.168.7.200:3141/root/pypi/+simple/
     --no-cache-dir \
     -r requirements.txt
 
