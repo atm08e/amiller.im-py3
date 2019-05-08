@@ -61,7 +61,27 @@ def setup_galleries(path_to_static):
                             os.path.join(path_to_static,
                                          *['galleries', 'snowboarding', '2018', 'wreckbreck2018.json']))
                     },
-
+                '2019':
+                    {
+                        '1': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2019', 'whistler-dec-2019.json'])),
+                        '2': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2019', 'colorado-solo-2019.json'])),
+                        '3': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2019', 'wreck-breck-2019.json'])),
+                        '4': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2019', 'shred-a-palooza-2019.json'])),
+                        '5': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2019', 'heavenly-spring-2019.json'])),
+                        '6': gallery_json_loader(
+                            os.path.join(path_to_static,
+                                         *['galleries', 'snowboarding', '2019', 'kirkwood-spring-2019.json']))
+                    }
             },
         'boating':
             {
